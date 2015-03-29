@@ -30,7 +30,12 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$project = [
+			'name' => 'Проект &laquo;Органайзер&raquo;',
+			'github' => 'https://github.com/tanzoor/organizer'
+		];
+
+		return view('welcome', compact('project'));
 	}
 
 }

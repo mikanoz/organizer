@@ -13,9 +13,19 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::bind('events', function($value, $route) {
+	return App\Event::whereSlug($value)->first();
+});
+Route::bind('tasks', function($value, $route) {
+	return App\Task::whereSlug($value)->first();
+});
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::resource('events', 'EventsController');
+Route::resource('tasks', 'TasksController');
+
+//Route::get('home', 'HomeController@index');
+
+//Route::controllers([
+//	'auth' => 'Auth\AuthController',
+//	'password' => 'Auth\PasswordController',
+//]);

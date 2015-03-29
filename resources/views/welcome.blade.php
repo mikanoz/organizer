@@ -1,48 +1,45 @@
-<html>
-	<head>
-		<title>Laravel</title>
-		
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('app')
 
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
+@section('custom_styles')
+    <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css' />
 
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #B0BEC5;
+        }
 
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
+        .container {
+            text-align: center;
+            vertical-align: middle;
+        }
 
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
+        .content {
+            text-align: center;
+            display: inline-block;
+            font-size: 24px;
+        }
 
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
-		</div>
-	</body>
-</html>
+        .title {
+            font-size: 96px;
+            margin-bottom: 40px;
+            font-family: 'Lato', Arial, sans-serif;
+        }
+
+        .content img {
+            width: 20%;
+        }
+    </style>
+@endsection
+
+@section('content')
+    <div class="container">
+        <div class="content">
+            <img src="{{ URL::to('/') }}/img/laravel-logo.png" alt="logo" />
+            <p class="title">Laravel 5</p>
+            <p>{{ $project['name'] }}</p>
+            <p><a href="{{ $project['github'] }}">Github</a></p>
+        </div>
+    </div>
+@endsection
