@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Event;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class EventsController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$events = Event::all();
+
+		return view('events.index', compact('events'));
 	}
 
 	/**
@@ -40,21 +43,21 @@ class EventsController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param Event $event
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Event $event)
 	{
-		//
+		return view('events.show', compact('event'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param Event $event
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Event $event)
 	{
 		//
 	}
@@ -62,10 +65,10 @@ class EventsController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param Event $event
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Event $event)
 	{
 		//
 	}
@@ -73,10 +76,10 @@ class EventsController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param Event $event
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Event $event)
 	{
 		//
 	}

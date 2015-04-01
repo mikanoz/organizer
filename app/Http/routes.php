@@ -13,6 +13,10 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::model('events', 'Event');
+Route::model('tasks', 'Task');
+
+// Access by slug in URL
 Route::bind('events', function($value, $route) {
 	return App\Event::whereSlug($value)->first();
 });

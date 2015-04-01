@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller {
@@ -14,7 +15,9 @@ class TasksController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$tasks = Task::all();
+
+		return view('tasks.index', compact('tasks'));
 	}
 
 	/**
@@ -40,21 +43,21 @@ class TasksController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param Task $task
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Task $task)
 	{
-		//
+		return view('tasks.show', compact('task'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param Task $task
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Task $task)
 	{
 		//
 	}
@@ -62,10 +65,10 @@ class TasksController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param Task $task
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Task $task)
 	{
 		//
 	}
@@ -73,10 +76,10 @@ class TasksController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param Task $task
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Task $task)
 	{
 		//
 	}

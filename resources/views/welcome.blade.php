@@ -39,6 +39,12 @@
             <img src="{{ URL::to('/') }}/img/laravel-logo.png" alt="logo" />
             <p class="title">Laravel 5</p>
             <p>{{ $project['name'] }}</p>
+
+            <p>
+               <a href="{{ route('events.index') }}">Мероприятия</a> |
+               <a href="{{ route('tasks.index') }}">Задачи</a>
+            </p>
+
             <p><a href="{{ $project['github'] }}">Github</a></p>
         </div>
     </div>
