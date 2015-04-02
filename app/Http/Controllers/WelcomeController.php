@@ -30,6 +30,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		// это не очень осмысленно
+		// лучше в самом шаблоне прописать название и ссылку
 		$project = [
 			'name' => 'Проект &laquo;Органайзер&raquo;',
 			'github' => 'https://github.com/tanzoor/organizer'

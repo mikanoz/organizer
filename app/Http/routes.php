@@ -27,6 +27,12 @@ Route::bind('tasks', function($value, $route) {
 Route::resource('events', 'EventsController');
 Route::resource('tasks', 'TasksController');
 
+// лучше не мусорить. если код не нужен - удалять бесжалостно
+// git все помнит
+// а вот при командной работе каждый будет смотреть на этот кусок
+// и думать - можно удалять его или нет, нужен он тут или нет, а если нужен - то зачем и т.п.
+// неиспользуемый функционал нужно сносить начисто, не жалеть и не бояться
+
 //Route::get('home', 'HomeController@index');
 
 //Route::controllers([

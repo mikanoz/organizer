@@ -9,6 +9,8 @@ class EventsTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		DB::table('events')->delete();
 
+		// не здесь это должно быть
+		// в конфиге app/config/app.php есть timezone, туда и прописать нужную зону
 		date_default_timezone_set('Europe/Moscow');
 
 		$events = array(

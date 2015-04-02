@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        {{-- здесь, то же самое замечание про if что и в другом шаблоне --}}
         @if ( !$tasks->count() )
             <p>У вас нет текущих задач!</p>
         @else

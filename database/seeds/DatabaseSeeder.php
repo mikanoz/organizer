@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
+		// ненужное - удалять
 		// $this->call('UserTableSeeder');
 		$this->call('EventsTableSeeder');
 		$this->call('TasksTableSeeder');
